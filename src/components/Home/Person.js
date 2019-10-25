@@ -5,9 +5,7 @@ import n1 from '../../assets/word/n1.png';
 import n2 from '../../assets/word/n2.png';
 import t3 from '../../assets/word/t3.png';
 
-export default function Person({
-  distanceObj: { afterScrollTop, clientWidth }
-}) {
+export default function Person({ afterScrollTop, clientWidth }) {
   const [people, randomSort] = useState(People);
   let position = [
     [150, 120, 180, 150, 210, 150],
@@ -30,7 +28,7 @@ export default function Person({
     position = position.map((item, positionIndex) =>
       item.map((num, innerIndex) =>
         Math.max(
-          (1 - (afterScrollTop - startSetting) / 799) *
+          (1 - (afterScrollTop - 150 - startSetting) / 799) *
             positionCopy[positionIndex][innerIndex],
           0
         )

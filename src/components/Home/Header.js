@@ -1,37 +1,31 @@
 import React from 'react';
 import './Header.sass';
-import QyLogo from '../../assets/qylogo.png';
 import t1 from '../../assets/word/t1.png';
+import HeadBar from '../Common/HeadBar';
 
-export default function Header({
-  distanceObj: { afterScrollTop, clientWidth }
-}) {
+const DISTANCE_LEFT_END = 0;
+const DISTANCE_RIGHT_END = 40;
+
+export default function Header({ afterScrollTop, clientWidth, range }) {
+  const [MIN, MAX] = range;
   let rightDistance;
   if (clientWidth <= 920) {
-    // rightDistance = 25;
-    rightDistance = 40;
-  } else if (afterScrollTop >= 798) {
-    rightDistance = 0;
-  } else if (afterScrollTop === 0) {
-    rightDistance = 40;
+    rightDistance = DISTANCE_RIGHT_END;
+  } else if (afterScrollTop >= MAX) {
+    rightDistance = DISTANCE_LEFT_END;
+  } else if (afterScrollTop === MIN) {
+    rightDistance = DISTANCE_RIGHT_END;
   } else {
-    rightDistance = Math.max((1 - afterScrollTop / 798) * 40, 0);
+    rightDistance = Math.max(
+      (1 - afterScrollTop / MAX) * DISTANCE_RIGHT_END,
+      DISTANCE_LEFT_END
+    );
   }
 
   return (
     <div id="part1">
       <div className="part1-container">
-        <div className="head-bar">
-          <img src={QyLogo} alt="" className="qylogo" />
-          <div className="nav-list">
-            <div className="nav-item first">首页</div>
-            <div className="nav-item second">了解我们</div>
-            <div className="nav-item second">加入我们</div>
-            <div className="nav-item third">合作沟通</div>
-            <div className="nav-item third">开发者</div>
-          </div>
-          <button>用户服务</button>
-        </div>
+        <HeadBar />
         <div className="head-content-container">
           <div className="content-title">
             <img src={t1} alt="" />
@@ -41,7 +35,8 @@ export default function Header({
               2017年春天，南邮小程序上显示出第一句"Hello, world"，
             </p>
             <p className="head-content">
-              今天，我们有超过五万用户，超过一万日活，<br/>
+              今天，我们有超过五万用户，超过一万日活，
+              <br />
               超过十万日访问量，超过千万次接口调用。
             </p>
             <p className="head-content">

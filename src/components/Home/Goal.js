@@ -11,10 +11,13 @@ import w1 from '../../assets/word/w1.png';
 import w2 from '../../assets/word/w2.png';
 import w3 from '../../assets/word/w3.png';
 
-export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
-  let distance = 0;
+export default function Goal({ afterScrollTop, clientWidth, range }) {
+  const [MIN, MAX] = range;
+  let distance = -30;
   if (clientWidth > 920) {
-    distance = ((afterScrollTop - 1700) / 600) * 20.5;
+    distance = ((afterScrollTop - MIN) / (MAX - MIN)) * 60 - 30;
+  } else {
+    distance = 0;
   }
   return (
     <div id="part4">

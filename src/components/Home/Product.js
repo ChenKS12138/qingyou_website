@@ -8,20 +8,22 @@ import iphone3 from '../../assets/iphone/3.png';
 import iphone4 from '../../assets/iphone/4.png';
 import iphone5 from '../../assets/iphone/5.png';
 
-export default function Product({
-  distanceObj: { afterScrollTop, clientWidth }
-}) {
-  let rightDistance2 = 9;
-  let rightDistance3 = 0;
+export default function Product({ afterScrollTop, clientWidth, range }) {
+  const [MIN, MAX] = range;
+  let rightDistance2 = 13;
+  let rightDistance3 = -13;
   if (clientWidth <= 920) {
-    rightDistance3 = -8;
-  } else if (clientWidth > 920 && afterScrollTop > 500) {
-    const base = Math.max(
-      0,
-      1.5 * ((10 * (180 - (afterScrollTop - 500))) / 300)
-    );
-    rightDistance2 = base;
-    rightDistance3 = base > 4.5 ? 2 * (9 - base) : 2 * base;
+    rightDistance3 = -7;
+  } else if (clientWidth > 920 && afterScrollTop > MIN) {
+    const base = (afterScrollTop - MIN) / (MAX - MIN);
+    rightDistance2 = (1 - base) * 13;
+    if (base < 1 / 3) {
+      rightDistance3 = -(1 - 3 * base) * 13;
+    } else if (base < 2 / 3) {
+      rightDistance3 = (3 * base - 1) * 13;
+    } else {
+      rightDistance3 = (1 - base) * 39;
+    }
   }
 
   return (

@@ -1,0 +1,84 @@
+.head-bar
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 10rem;
+  @media screen and (max-width: 1250px)
+    background-color: rgba(248, 248, 255, 0.5);
+    position: relative;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    height: 9.0625rem;
+    border-bottom: 0.0625rem solid #dcdcdc;
+    margin-bottom: 2.9375rem;
+  @media screen and (max-width: 920px)
+    height: 6.6875rem;
+  .qylogo
+    width: 10rem;
+    margin-right: 18.8125rem;
+    @media screen and (max-width: 1250px)
+      order: 1;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      margin-right: 0;
+    @media screen and (max-width: 920px)
+      width: 6.9375rem;
+  .nav-list
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 28rem;
+    height: 1.8125rem;
+    margin-right: 2.375rem; 
+    @media screen and (max-width: 1250px)
+      order: 3;
+      position: absolute;
+      top: 6.25rem;
+      left: 50%;
+      transform: translate(-50%);
+      width: 70%;
+    @media screen and (max-width: 920px)
+      top: 4.3125rem;
+      width: 21.125rem;
+      height: 1.375rem;
+      margin-right: 0;
+    .nav-item
+      line-height: 1.8125rem;
+      font-size: 1.1125rem;
+      cursor: pointer;
+      @media screen and (max-width: 920px)
+        font-size: 1rem;
+        line-height: 1.375rem;
+    .first
+      font-weight: 600;
+      color: #6ba32a;
+    .second
+      color: #4a4a4a;
+    .third
+      color: #676767
+  button
+    width: 8.75rem;
+    height: 2.75rem;
+    font-size: 1.125rem;
+    color: #606266;
+    outline: none;
+    border: none;
+    border-radius: 2.5rem;
+    text-decoration: none;
+    background: -webkit-gradient(linear,left top,right top,from(#8bd21f),to(#d8d23e));
+    background: linear-gradient(90deg,#8bd21f,#d8d23e);
+    -webkit-box-shadow: 0.125rem 0.25rem 0.3125rem #f3f6ac;
+    box-shadow: 0.125rem 0.25rem 0.3125rem #f3f6ac;
+    cursor: pointer;
+    @media screen and (max-width: 1250px)
+      order: 2;
+      position: absolute;
+      top: 1.875rem;
+      right: 1rem;
+    @media screen and (max-width: 920px)
+      top: 1.3125rem;
+      width: 5.875rem;
+      height: 2rem;
+      font-size: 0.75rem;
