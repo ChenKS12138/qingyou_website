@@ -1,3 +1,12 @@
-import Home from './pages/Home/Home';
+import React from 'react';
+import { Route } from './router/index';
+import HeaderBar from './components/Common/HeadBar';
 
-export default Home;
+export default function() {
+  return (
+    <>
+      <HeaderBar />
+      <Route />
+    </>
+  );
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import './Header.sass';
 import t1 from '../../assets/word/t1.png';
-import HeadBar from '../Common/HeadBar';
 
 const DISTANCE_LEFT_END = 0;
 const DISTANCE_RIGHT_END = 40;
@@ -25,7 +24,6 @@ export default function Header({ afterScrollTop, clientWidth, range }) {
   return (
     <div id="part1">
       <div className="part1-container">
-        <HeadBar />
         <div className="head-content-container">
           <div className="content-title">
             <img src={t1} alt="" />
