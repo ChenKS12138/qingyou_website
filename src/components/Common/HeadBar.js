@@ -14,8 +14,12 @@ export default function() {
         <Link path="/aboutUs">
           <div className="nav-item second">了解我们</div>
         </Link>
-        <div className="nav-item second">加入我们</div>
-        <div className="nav-item third">合作沟通</div>
+        <Link path="/joinUs">
+          <div className="nav-item second">加入我们</div>
+        </Link>
+        <Link path="/communication">
+          <div className="nav-item third">合作沟通</div>
+        </Link>
         {/* <div className="nav-item third">开发者</div> */}
       </div>
       {/* <button>用户服务</button> */}
