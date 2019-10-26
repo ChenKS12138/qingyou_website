@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import RouterMap from './router';
 
 const EVENT_PUSHSTATE = new Event('pushState');
 
-export function Route() {
-  const [path, setPath] = useState(Object.keys(RouterMap)[0]);
+export function RouteView(props) {
+  const { currentPath: path, setCurrentPath: setPath } = props;
   useEffect(() => {
-    const { pathname } = window.location;
-    const newPath = Object.keys(RouterMap).includes(pathname)
-      ? pathname
-      : Object.keys(RouterMap)[0];
-    setPath(newPath);
-    window.history.replaceState(null, null, newPath);
+    window.history.replaceState(null, null, path);
     window.addEventListener('pushState', () => {
       setPath(window.location.pathname);
     });
