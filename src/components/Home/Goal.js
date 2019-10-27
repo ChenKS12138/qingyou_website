@@ -52,7 +52,7 @@ export default function Goal({ afterScrollTop, clientWidth, range }) {
       <div className="goal-more">了解青柚团队的共识 ></div>
       <div className="goal-card-set">
         <div
-          className="goal-card"
+          className="goal-card user"
           style={{
             backgroundImage: `url('${blue}')`
           }}
@@ -61,7 +61,7 @@ export default function Goal({ afterScrollTop, clientWidth, range }) {
           <div className="goal-card-sub-text">用户原则</div>
         </div>
         <div
-          className="goal-card"
+          className="goal-card team"
           style={{
             backgroundImage: `url('${pink}')`
           }}
@@ -70,7 +70,7 @@ export default function Goal({ afterScrollTop, clientWidth, range }) {
           <div className="goal-card-sub-text">团队共识</div>
         </div>
         <div
-          className="goal-card"
+          className="goal-card project"
           style={{
             backgroundImage: `url('${orange}')`
           }}

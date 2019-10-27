@@ -1,21 +1,22 @@
 #part2
   width: 100vw;
-  height: 49.9375rem;
+  height: 100vh;
   background-image: url("../../assets/landing-bg.png")
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  @media screen and (max-width: 1024px)
-    height: 51rem;
+  // @media screen and (max-width: 1024px)
+  //   height: 51rem;
   @media screen and (max-width: 920px)
     height: 69rem;
   .product-title
     width: 443px;
     height: 53px;
-    margin: 83px auto 35px;
+    margin: 120px auto 0;
     img
       width: 100%;
       //height: 100%;
@@ -28,7 +29,7 @@
     flex-direction: column;
     align-items: center;
     @media screen and (max-width: 920px)
-      margin-top: 1rem
+      margin-top: 3rem
     .product-desc-item
       width: 52rem;
       font-family: Helvetica;
@@ -67,13 +68,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transform: translateY(0.3rem);
+      transform: translateY(2rem);
       // margin-top: calc(100vh - 45rem);
-      margin-top: 1rem;
+      margin-top: 4rem;
       @media screen and (max-width: 920px)
         width: 23rem;
         flex-wrap: wrap;
-        transform: translateY(-9rem);  
+        // transform: translateY(-9rem);  
       .product-show-item
         width: 14rem;
         height: 28rem;
@@ -86,8 +87,9 @@
         .iphone2
           margin-left: 0.5rem;
         .iphone4
-          margin-top: 1rem;
+          margin-top: 2rem;
           margin-left: 0.5rem;
+          transform: translateY(-4rem);
         .iphone5
           display: none;
         

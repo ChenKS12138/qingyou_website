@@ -45,25 +45,25 @@ function Home() {
 
   const HeaderWithOffset = useScrollTop(
     Header,
-    [0, 1.05 * pageHeight],
+    [0, 1 * pageHeight],
     afterScrollTop,
     clientWidth
   );
   const ProductWithOffset = useScrollTop(
     Product,
-    [0.65 * pageHeight, 1.3 * pageHeight],
+    [0.45 * pageHeight, 0.98 * pageHeight],
     afterScrollTop,
     clientWidth
   );
   const PersonWidthOffset = useScrollTop(
     Person,
-    [0.8 * pageHeight, 2.2 * pageHeight],
+    [0.8 * pageHeight, 1.9 * pageHeight],
     afterScrollTop,
     clientWidth
   );
   const GoalWithOffset = useScrollTop(
     Goal,
-    [1.3 * pageHeight, 2.85 * pageHeight],
+    [1.3 * pageHeight, 2.6 * pageHeight],
     afterScrollTop,
     clientWidth
   );
