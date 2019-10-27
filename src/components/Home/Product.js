@@ -11,18 +11,19 @@ import iphone5 from '../../assets/iphone/5.png';
 export default function Product({ afterScrollTop, clientWidth, range }) {
   const [MIN, MAX] = range;
   let rightDistance2 = 13;
-  let rightDistance3 = -13;
+  let rightDistance3 = -7;
   if (clientWidth <= 920) {
+    rightDistance2 = 3;
     rightDistance3 = -7;
   } else if (clientWidth > 920 && afterScrollTop > MIN) {
     const base = (afterScrollTop - MIN) / (MAX - MIN);
     rightDistance2 = (1 - base) * 13;
     if (base < 1 / 3) {
-      rightDistance3 = -(1 - 3 * base) * 13;
+      rightDistance3 = -(1 - 3 * base) * 7;
     } else if (base < 2 / 3) {
-      rightDistance3 = (3 * base - 1) * 13;
+      rightDistance3 = (3 * base - 1) * 7;
     } else {
-      rightDistance3 = (1 - base) * 39;
+      rightDistance3 = (1 - base) * 21;
     }
   }
 
@@ -54,7 +55,7 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
           />
           <img
             className="product-show-item iphone2"
-            style={{ zIndex: 4, marginTop: `${rightDistance2}rem` }}
+            style={{ zIndex: 4, transform: `translateY(${rightDistance2}rem)` }}
             src={iphone2}
             alt=""
           />
@@ -62,7 +63,7 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
             className="product-show-item"
             src={iphone3}
             alt=""
-            style={{ zIndex: 3, marginTop: `${rightDistance3}rem` }}
+            style={{ zIndex: 3, transform: `translateY(${rightDistance3}rem)` }}
           />
           <img
             className="product-show-item iphone4"
@@ -74,7 +75,7 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
             className="product-show-item iphone5"
             src={iphone5}
             alt=""
-            style={{ zIndex: 1, marginTop: `${rightDistance2}rem` }}
+            style={{ zIndex: 1, transform: `translateY(${rightDistance2}rem)` }}
           />
         </div>
       </div>

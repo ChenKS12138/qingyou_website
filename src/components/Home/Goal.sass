@@ -107,6 +107,14 @@
         margin-top: 0.5rem;
         margin-left: 0rem;
         margin-right: 0rem;
+        background-size: 75% 120%;
+        background-position: 100% 20%;
+        &.user
+          background-color: rgb(126,199,255);
+        &.team
+          background-color: rgb(255, 172, 176);
+        &.project
+          background-color: rgb(255, 190, 84);
       .goal-card-text
         height: 2rem;
         font-family: PingFangSC-Regular;
@@ -161,6 +169,8 @@
       height: 18rem;
       margin-right: 3rem;
       cursor: pointer;
+      @media screen and ( max-width: 1024px )
+        width: 50%;
       @media screen and (max-width: 920px)
         width: 80%;
         height: 10rem;

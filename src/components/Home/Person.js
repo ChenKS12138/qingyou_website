@@ -5,33 +5,32 @@ import n1 from '../../assets/word/n1.png';
 import n2 from '../../assets/word/n2.png';
 import t3 from '../../assets/word/t3.png';
 
-export default function Person({ afterScrollTop, clientWidth }) {
-  const [people, randomSort] = useState(People);
+export default function Person({ afterScrollTop, clientWidth, range }) {
+  const [MIN, MAX] = range;
+  const [people, randomSort] = useState(People.sort(() => 0.5 - Math.random()));
+
   let position = [
-    [150, 120, 180, 150, 210, 150],
-    [160, 100, 160, 220, 160],
+    [300, 120, 240, 150, 210, 150],
+    [200, 100, 160, 220, 160],
     [170, 170, 230, 170],
     [180, 150, 210, 180, 240, 180]
   ];
 
   const positionCopy = [
-    [150, 120, 180, 150, 210, 150],
-    [160, 100, 160, 220, 160],
+    [300, 120, 240, 150, 210, 150],
+    [200, 100, 160, 220, 160],
     [170, 170, 230, 170],
     [180, 150, 210, 180, 240, 180]
   ];
 
   if (clientWidth <= 920) {
     position = position.map(item => item.fill(0));
-  } else if (clientWidth > 920 && afterScrollTop >= 622) {
-    const startSetting = clientWidth > 1024 ? 622 : 420;
+  } else if (clientWidth > 920 && afterScrollTop >= MIN) {
+    const base = (afterScrollTop - MIN) / (MAX - MIN);
+    // const startSetting = clientWidth > 1024 ? 622 : 420;
     position = position.map((item, positionIndex) =>
       item.map((num, innerIndex) =>
-        Math.max(
-          (1 - (afterScrollTop - 150 - startSetting) / 799) *
-            positionCopy[positionIndex][innerIndex],
-          0
-        )
+        Math.max((1 - base) * positionCopy[positionIndex][innerIndex], 0)
       )
     );
   }
