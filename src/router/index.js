@@ -2,14 +2,24 @@ import React, { useEffect } from 'react';
 import RouterMap from './router';
 
 const EVENT_PUSHSTATE = new Event('pushState');
+const HASH_MODE = false;
+
+const pathFilter = path =>
+  Object.keys(RouterMap).includes(path) ? path : Object.keys(RouterMap)[0];
 
 export function RouteView(props) {
   const { currentPath: path, setCurrentPath: setPath } = props;
   useEffect(() => {
-    window.history.replaceState(null, null, path);
-    window.addEventListener('pushState', () => {
-      setPath(window.location.pathname);
-    });
+    if (HASH_MODE) {
+      window.addEventListener('hashchange', () => {
+        setPath(pathFilter(window.location.hash.slice(1)));
+      });
+    } else {
+      window.history.replaceState(null, null, path);
+      window.addEventListener('pushState', () => {
+        setPath(pathFilter(window.location.pathname));
+      });
+    }
     return () => window.removeEventListener('pushState');
   }, []);
   const Component = RouterMap[path];
@@ -21,14 +31,13 @@ export function Link(props) {
   return (
     <span
       onClick={() => {
-        window.history.pushState(
-          null,
-          null,
-          Object.keys(RouterMap).includes(path)
-            ? path
-            : Object.keys(RouterMap)[0]
-        );
-        window.dispatchEvent(EVENT_PUSHSTATE);
+        const target = pathFilter(path);
+        if (HASH_MODE) {
+          window.location.hash = target;
+        } else {
+          window.history.pushState(null, null, target);
+          window.dispatchEvent(EVENT_PUSHSTATE);
+        }
       }}
     >
       {children}

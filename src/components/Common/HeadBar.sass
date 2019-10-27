@@ -6,6 +6,7 @@
   left: 50%;
   transform: translateX(-50%)
   position: absolute;
+  z-index: 9;
   @media screen and (max-width: 1250px)
     background-color: rgba(248, 248, 255, 0.5);
     // position: relative;
@@ -54,6 +55,8 @@
       user-select: none;
       @media screen and (max-width: 920px)
         font-size: 1rem;
+        cursor: pointer;
+        // z-index: 9;
         line-height: 1.375rem;
     .first
       font-weight: 600;

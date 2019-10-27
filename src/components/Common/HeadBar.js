@@ -27,8 +27,8 @@ export default function(props) {
     <div className="head-bar">
       <img src={QyLogo} alt="" className="qylogo" />
       <div className="nav-list">
-        {Object.entries(NavigationItems).map(([path, name]) => (
-          <Link path={path}>
+        {Object.entries(NavigationItems).map(([path, name], index) => (
+          <Link path={path} key={index}>
             <div
               className="nav-item"
               style={currentPath === path ? Style.focus : Style.unfocus}

@@ -63,7 +63,7 @@ function Home() {
   );
   const GoalWithOffset = useScrollTop(
     Goal,
-    [1.9 * pageHeight, 2.85 * pageHeight],
+    [1.3 * pageHeight, 2.85 * pageHeight],
     afterScrollTop,
     clientWidth
   );
