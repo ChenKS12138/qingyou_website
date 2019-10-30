@@ -1,3 +1,4 @@
+import { random } from 'node-forge';
 import People1 from '../../assets/people/1.jpg';
 import People2 from '../../assets/people/2.jpg';
 import People3 from '../../assets/people/3.jpg';
@@ -35,7 +36,10 @@ import People33 from '../../assets/people/33.jpg';
 export const People = [
   {
     id: 1,
-    img: People1
+    img: People1,
+    name: '严宇倞',
+    goodAt: 'Java，Web，Microservices',
+    description: '中年程序员，低配全栈，想跨过山和大海，也想穿过人山人海。'
   },
   {
     id: 2,
@@ -43,7 +47,10 @@ export const People = [
   },
   {
     id: 3,
-    img: People3
+    img: People3,
+    name: '江子玮',
+    goodAt: '前端',
+    description: '骚还是我骚啊~'
   },
   {
     id: 4,
@@ -51,51 +58,90 @@ export const People = [
   },
   {
     id: 5,
-    img: People5
+    img: People5,
+    name: '宁泓皓',
+    goodAt: '前端',
+    description: '对不起，02是我老婆…'
   },
   {
     id: 6,
-    img: People6
+    img: People6,
+    name: '唐子惠',
+    goodAt: 'UI、画师',
+    description: '专注做个萌萌哒的吉祥物（求约稿啊！）'
   },
   {
     id: 7,
-    img: People7
+    img: People7,
+    name: '彭泽凡',
+    goodAt: '前端',
+    description:
+      '反正主页一般没人看，我就随便写写是不是也没人能发现，顺便，千万不要加江同学微信！切记。'
   },
   {
     id: 8,
-    img: People8
+    img: People8,
+    name: '刘杰',
+    goodAt: '画师',
+    description: '无'
   },
   {
     id: 9,
-    img: People9
+    img: People9,
+    name: '顾怡',
+    goodAt: '房主',
+    description: '青柚管理员，以前是前端，现在是房主。'
   },
   {
     id: 10,
-    img: People10
+    img: People10,
+    name: '梁天琦',
+    goodAt: '前端',
+    description: 'JavaScript是世界上最混乱邪恶的语言'
   },
   {
     id: 11,
-    img: People11
+    img: People11,
+    name: '张楚月',
+    goodAt: 'UI',
+    description: 'The unity of inner knowledge and action —'
   },
   {
     id: 12,
-    img: People12
+    img: People12,
+    name: '刘源',
+    goodAt: '后端',
+    description: '大三计软件院咸鱼，赵明睿大佬的小弟'
   },
   {
     id: 13,
-    img: People13
+    img: People13,
+    name: '谭康威',
+    goodAt: 'UI、运营、其他',
+    description:
+      '南邮装修专业一个画UI的运营，承包青柚各种宣传推广和各种大活装修业务。'
   },
   {
     id: 14,
-    img: People14
+    img: People14,
+    name: '顾刘健',
+    goodAt: '运维',
+    description: '大概专业打杂100年。'
   },
   {
     id: 15,
-    img: People15
+    img: People15,
+    name: '黄兴源',
+    goodAt: '前端',
+    description: '在混乱邪恶的世界里爱我所爱,行我所行。'
   },
   {
     id: 16,
-    img: People16
+    img: People16,
+    name: '赵明睿',
+    goodAt: '后端',
+    description:
+      '基本上所有精力都放在了后端学习，日常有点颓废，有点懒，觉得自己什么都不会，想要健身的路上。然后单身。'
   },
   {
     id: 17,
@@ -107,7 +153,11 @@ export const People = [
   },
   {
     id: 19,
-    img: People19
+    img: People19,
+    name: '邹昊',
+    goodAt: '前端',
+    description:
+      '邹缨齐紫，昊天罔极。我只想说为什么面向对象的程序员没有对象啊！人生真是寂寞如雪唉，恋爱是不可能的，还是好好学前端吧2333。'
   },
   {
     id: 20,
@@ -115,15 +165,25 @@ export const People = [
   },
   {
     id: 21,
-    img: People21
+    img: People21,
+    name: '史朝夕',
+    goodAt: '运维',
+    description:
+      '负责工作室的运维工作，以操作Linux操作系统为主，对相关服务器进行基本环境的搭建，对服务的运行状况进行监控和管理，优化相关服务的效率。\n其实也是个拉拉人('
   },
   {
     id: 22,
-    img: People22
+    img: People22,
+    name: '朱晓峰',
+    goodAt: '后端、数据分析',
+    description: '世间草木皆美，人不是。中药很苦，你也是。'
   },
   {
     id: 23,
-    img: People23
+    img: People23,
+    name: '肖雨点',
+    goodAt: '画师/UI',
+    description: '没有才华'
   },
   {
     id: 24,
@@ -151,18 +211,30 @@ export const People = [
   },
   {
     id: 30,
-    img: People30
+    img: People30,
+    name: '李林睿',
+    goodAt: '后端',
+    description: '小白，我们什么时候才能快乐呢'
   },
   {
     id: 31,
-    img: People31
+    img: People31,
+    name: '陈志帆',
+    goodAt: '前端',
+    description: 'Consider everything deeply but still remain fearless.'
   },
   {
     id: 32,
-    img: People32
+    img: People32,
+    name: '黄敏志',
+    goodAt: '后端',
+    description: '无'
   },
   {
     id: 33,
-    img: People33
+    img: People33,
+    name: '季嘉澎',
+    goodAt: '运维',
+    description: '无'
   }
 ];

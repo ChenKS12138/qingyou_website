@@ -1,0 +1,178 @@
+.aboutUs
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  align-items: center
+  .fixed-buttons
+    position: fixed
+    bottom: 1rem
+    right: 1rem
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    // height: 10rem
+    button
+      width: 4rem
+      height: 4rem
+      border: 4rem
+      border-radius: 50%
+      box-shadow: 2px 2px 3px #999;
+      font-size: 1.5rem
+      color: rgb(107, 163, 42)
+      outline: none
+  .introduction
+    width: 100vw
+    height: 100vh
+    background-image: url('../../assets/landing-bg.png');
+    background-size: 100% 100%
+  .productions-container
+    width: 100vw
+    height: 100vh
+    // background-image: url('../../assets/bg.png');
+    background-color: rgb(246, 246, 246)
+    display: flex
+    justify-content: center
+    // align-items: center
+    .top-container
+      width: 80vw
+      height: calc( 100% - 10rem )
+      margin-top: 8rem
+      display: flex
+      justify-content: center
+      align-items: center
+      .carousel
+        border: 1px solid 
+        border-radius: 5%
+        position: relative
+        overflow: hidden
+        width: 60vw
+        height: 90%
+        display: flex
+        align-items: center
+      .production
+        width: 100%
+        height: 100%
+        position: relative
+        display: flex
+        flex-direction: column
+        // justify-content: center
+        align-items: center
+        &.miniprogram
+          .first
+            background-image: url('../../assets/aboutUs/miniprogram1.png')
+          .second
+            left: 25%
+            background-image: url('../../assets/aboutUs/miniprogram2.png')
+          .third
+            left: 45%
+            background-image: url('../../assets/aboutUs/miniprogram3.png')
+          .fourth
+            left: 65%
+            background-image: url('../../assets/aboutUs/miniprogram4.png')
+        &.displays
+          .first
+            background-image: url('../../assets/aboutUs/mid-autumn.jpeg')
+          .second
+            left: 30%
+            background-image: url('../../assets/aboutUs/national-day.jpeg')              
+          .third
+            left: 65%
+            background-image: url('../../assets/aboutUs/new-year.jpeg')
+        &.reports
+          .first
+            background-image: url('../../assets/aboutUs/report1.jpeg')              
+          .second
+            left: 30%
+            background-image: url('../../assets/aboutUs/report2.jpeg')              
+          .third
+            left: 65%
+            background-image: url('../../assets/aboutUs/report3.jpeg')
+        .image-container
+          width: 100%
+          height: 90%
+          .image
+            position: absolute
+            width: 35%
+            height: 90%
+            background-size: 100% 100%
+            &.first
+              left: 0%
+        .image-intro
+          width: 100%
+          height: 10%
+          background-color: snow
+          display: flex
+          justify-content: center
+          align-items: center
+  .members
+    width: 100vw
+    height: 100vh
+    background-color: rgb(51, 102, 51)
+    display: flex
+    justify-content: center
+    align-items: center
+    .carousel
+      position: relative
+      overflow: hidden
+      width: 50vw
+      height: 70vh
+      display: flex
+      justify-content: center
+      align-items: center
+      // background-color: #E8F5E9
+      .person-container
+        height: 100%
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        .personal-avatar
+          width: 12rem
+          height: 16rem
+          img
+            width: 100%
+            height: 100%
+      .personal-information
+        width: calc( 100% - 12rem )
+        // height: 70%
+        max-height: 100%
+        display: flex
+        flex-direction: column
+        // justify-content: space-around
+        align-items: center
+        &>div
+          width: 80%
+          margin-bottom: 1rem
+          .prefix
+            display: inline-block
+            color: snow
+            font-size: 1.5rem
+            font-weight: 400
+            margin-bottom: 1rem
+          .content
+            color: #C8E6C9
+            font-size: 1.2rem
+            font-weight: 300
+.arrow
+  text-shadow: 1px 1px 1px #fff
+  z-index: 100
+  position: absolute
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 10%
+  font-size: 4rem
+  cursor: pointer
+  user-select: none
+  &.left
+    left: 0%
+  &.right
+    left: 90%
+  &.top
+    transform: translateX(-50%)
+    top: 5%
+    left: 50%
+  &.bottom
+    transform: translateX(-50%)
+    bottom: 5%
+    left: 50%
