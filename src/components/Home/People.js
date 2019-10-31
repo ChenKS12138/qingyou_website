@@ -1,4 +1,3 @@
-import { random } from 'node-forge';
 import People1 from '../../assets/people/1.jpg';
 import People2 from '../../assets/people/2.jpg';
 import People3 from '../../assets/people/3.jpg';

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Person.sass';
+import Flip from 'react-reveal/Flip';
 import { People } from './People';
 import n1 from '../../assets/word/n1.png';
 import n2 from '../../assets/word/n2.png';
@@ -114,21 +115,23 @@ export default function Person({ afterScrollTop, clientWidth, range }) {
           <button className="join">加入青柚</button>
         </div>
         <div className="right-container">
-          <div className="photo-wall">
-            {people.map((person, index) => {
-              if (index >= 21) return '';
-              const { id, img } = person;
-              return (
-                <div
-                  className={setClassName(index)}
-                  key={id}
-                  style={setStyle(index)}
-                >
-                  <img src={img} alt="" />
-                </div>
-              );
-            })}
-          </div>
+          <Flip left cascade>
+            <div className="photo-wall">
+              {people.map((person, index) => {
+                if (index >= 21) return '';
+                const { id, img } = person;
+                return (
+                  <div
+                    className={setClassName(index)}
+                    key={id}
+                    style={setStyle(index)}
+                  >
+                    <img src={img} alt="" />
+                  </div>
+                );
+              })}
+            </div>
+          </Flip>
           <div className="random" onClick={handleClick}>
             随机换一拨
           </div>

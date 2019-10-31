@@ -1,5 +1,6 @@
 import React from 'react';
 import './Goal.sass';
+import Zoom from 'react-reveal/Zoom'
 import blue from '../../assets/blue.png';
 import pink from '../../assets/pink.png';
 import orange from '../../assets/orange.png';
@@ -33,23 +34,25 @@ export default function Goal({ afterScrollTop, clientWidth, range }) {
         src={q}
         alt=""
       />
-      <div className="goal-title" />
-      <div className="goal-desc">
-        <div className="goal-desc-item">
-          我们不会没有任何目的性地去做一件事。我们的目的是什么？
+      <Zoom cascade>
+        <div className="goal-title" />
+        <div className="goal-desc">
+          <div className="goal-desc-item">
+            我们不会没有任何目的性地去做一件事。我们的目的是什么？
+          </div>
+          <div className="goal-desc-item">
+            看到每个同学都在使用南邮小程序，看到期末报告单在朋友圈里刷屏，
+          </div>
+          <div className="goal-desc-item">
+            看到同学们在表白墙吐槽我们的功能不够完善，看到有人向朋友炫耀南邮人的小程序。
+          </div>
+          <div className="goal-desc-item">物质或许不是我们追求的目的，</div>
+          <div className="goal-desc-item">
+            用技术服务更多人来取悦自己的精神享受，更加值得回味。
+          </div>
         </div>
-        <div className="goal-desc-item">
-          看到每个同学都在使用南邮小程序，看到期末报告单在朋友圈里刷屏，
-        </div>
-        <div className="goal-desc-item">
-          看到同学们在表白墙吐槽我们的功能不够完善，看到有人向朋友炫耀南邮人的小程序。
-        </div>
-        <div className="goal-desc-item">物质或许不是我们追求的目的，</div>
-        <div className="goal-desc-item">
-          用技术服务更多人来取悦自己的精神享受，更加值得回味。
-        </div>
-      </div>
-      <div className="goal-more">了解青柚团队的共识 ></div>
+        <div className="goal-more">了解青柚团队的共识 ></div>
+      </Zoom>
       <div className="goal-card-set">
         <div
           className="goal-card user"

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Product.sass';
+import Bounce from 'react-reveal/Bounce';
 
 import t2 from '../../assets/word/t2.png';
 import iphone1 from '../../assets/iphone/1.png';
@@ -29,23 +30,27 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
 
   return (
     <div id="part2">
-      <div className="product-title">
-        <img src={t2} alt="" />
-      </div>
+      <Bounce top>
+        <div className="product-title">
+          <img src={t2} alt="" />
+        </div>
+      </Bounce>
       <div className="product-desc">
-        <div className="product-desc-item">
-          南邮小程序、校谈、期末报告单、社团招新系统、你头像真棒等等，
-        </div>
-        <div className="product-desc-item">
-          我们既是这些产品的开发者，也是他们最忠实的用户，更是最能挑刺的人。
-        </div>
-        <div className="product-desc-item">
-          做对得起自己的事，做自己都喜欢用的产品，
-        </div>
-        <div className="product-desc-item">
-          我们始终用心去做让自己满意的事。
-        </div>
-        <div className="product-desc-more">了解我们的更多产品 ></div>
+        <Bounce top cascade>
+          <div className="product-desc-item">
+            南邮小程序、校谈、期末报告单、社团招新系统、你头像真棒等等，
+          </div>
+          <div className="product-desc-item">
+            我们既是这些产品的开发者，也是他们最忠实的用户，更是最能挑刺的人。
+          </div>
+          <div className="product-desc-item">
+            做对得起自己的事，做自己都喜欢用的产品，
+          </div>
+          <div className="product-desc-item">
+            我们始终用心去做让自己满意的事。
+          </div>
+          <div className="product-desc-more">了解我们的更多产品 ></div>
+        </Bounce>
         <div className="product-show">
           <img
             className="product-show-item"
@@ -55,7 +60,10 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
           />
           <img
             className="product-show-item iphone2"
-            style={{ zIndex: 4, transform: `translateY(${rightDistance2}rem)` }}
+            style={{
+              zIndex: 4,
+              transform: `translateY(${rightDistance2}rem)`
+            }}
             src={iphone2}
             alt=""
           />
@@ -63,7 +71,10 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
             className="product-show-item"
             src={iphone3}
             alt=""
-            style={{ zIndex: 3, transform: `translateY(${rightDistance3}rem)` }}
+            style={{
+              zIndex: 3,
+              transform: `translateY(${rightDistance3}rem)`
+            }}
           />
           <img
             className="product-show-item iphone4"
@@ -75,7 +86,10 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
             className="product-show-item iphone5"
             src={iphone5}
             alt=""
-            style={{ zIndex: 1, transform: `translateY(${rightDistance2}rem)` }}
+            style={{
+              zIndex: 1,
+              transform: `translateY(${rightDistance2}rem)`
+            }}
           />
         </div>
       </div>
