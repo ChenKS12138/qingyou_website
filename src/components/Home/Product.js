@@ -36,7 +36,7 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
         </div>
       </Bounce>
       <div className="product-desc">
-        <Bounce top cascade>
+        <Bounce top>
           <div className="product-desc-item">
             南邮小程序、校谈、期末报告单、社团招新系统、你头像真棒等等，
           </div>

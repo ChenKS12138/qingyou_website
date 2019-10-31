@@ -24,8 +24,8 @@ export default function Header({ afterScrollTop, clientWidth, range }) {
 
   return (
     <div id="part1">
-      <LightSpeed left>
-        <div className="part1-container">
+      <div className="part1-container">
+        <LightSpeed left>
           <div className="head-content-container">
             <div className="content-title">
               <img src={t1} alt="" />
@@ -47,14 +47,14 @@ export default function Header({ afterScrollTop, clientWidth, range }) {
             </div>
             <div className="more">了解我们的更多 > </div>
           </div>
-          <div
-            className="top-bg"
-            style={{
-              transform: `translateX(${rightDistance}vw)`
-            }}
-          />
-        </div>
-      </LightSpeed>
+        </LightSpeed>
+        <div
+          className="top-bg"
+          style={{
+            transform: `translateX(${rightDistance}vw)`
+          }}
+        />
+      </div>
     </div>
   );
 }

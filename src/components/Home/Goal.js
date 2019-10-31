@@ -1,6 +1,6 @@
 import React from 'react';
 import './Goal.sass';
-import Zoom from 'react-reveal/Zoom'
+import Zoom from 'react-reveal/Zoom';
 import blue from '../../assets/blue.png';
 import pink from '../../assets/pink.png';
 import orange from '../../assets/orange.png';
