@@ -45,7 +45,7 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
         <div className="product-desc-item">
           我们始终用心去做让自己满意的事。
         </div>
-        <div className="product-desc-more">了解我们的更多产品 ></div>
+        <div className="product-desc-more">我们的产品</div>
         <div className="product-show">
           <img
             className="product-show-item"

@@ -5,9 +5,10 @@ import n1 from '../../assets/word/n1.png';
 import n2 from '../../assets/word/n2.png';
 import t3 from '../../assets/word/t3.png';
 
+const initPerson = People.sort(() => 0.5 - Math.random());
 export default function Person({ afterScrollTop, clientWidth, range }) {
   const [MIN, MAX] = range;
-  const [people, randomSort] = useState(People.sort(() => 0.5 - Math.random()));
+  const [people, randomSort] = useState(initPerson);
 
   let position = [
     [300, 120, 240, 150, 210, 150],

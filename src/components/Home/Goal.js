@@ -49,7 +49,7 @@ export default function Goal({ afterScrollTop, clientWidth, range }) {
           用技术服务更多人来取悦自己的精神享受，更加值得回味。
         </div>
       </div>
-      <div className="goal-more">了解青柚团队的共识 ></div>
+      <div className="goal-more">青柚团队的共识</div>
       <div className="goal-card-set">
         <div
           className="goal-card user"

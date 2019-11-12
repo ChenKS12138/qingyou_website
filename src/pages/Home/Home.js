@@ -51,19 +51,19 @@ function Home() {
   );
   const ProductWithOffset = useScrollTop(
     Product,
-    [0.45 * pageHeight, 0.98 * pageHeight],
+    [0.7 * pageHeight, 1.38 * pageHeight],
     afterScrollTop,
     clientWidth
   );
   const PersonWidthOffset = useScrollTop(
     Person,
-    [0.8 * pageHeight, 1.9 * pageHeight],
+    [0.9 * pageHeight, 2 * pageHeight],
     afterScrollTop,
     clientWidth
   );
   const GoalWithOffset = useScrollTop(
     Goal,
-    [1.3 * pageHeight, 2.6 * pageHeight],
+    [1.5 * pageHeight, 2.8 * pageHeight],
     afterScrollTop,
     clientWidth
   );

@@ -44,3 +44,19 @@ export function Link(props) {
     </span>
   );
 }
+
+export function ScrollLink(props) {
+  const { toTop = 0, behavior = 'smooth', children } = props;
+  return (
+    <span
+      onClick={() => {
+        window.scrollTo({
+          top: toTop,
+          behavior
+        });
+      }}
+    >
+      {children}
+    </span>
+  );
+}

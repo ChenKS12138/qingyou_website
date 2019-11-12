@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.sass';
 import t1 from '../../assets/word/t1.png';
 
@@ -20,15 +20,38 @@ export default function Header({ afterScrollTop, clientWidth, range }) {
       DISTANCE_LEFT_END
     );
   }
+  const [translateX, setTranslateX] = useState(0);
+  const [translateY, setTranslateY] = useState(0);
+  useEffect(() => {
+    window.addEventListener('mousemove', e => {
+      const { x, y } = e;
+      const { innerHeight, innerWidth } = window;
+      const tempX = -(x - innerWidth / 2) / (innerWidth / 2);
+      const tempY = -(y - innerHeight / 2) / (innerHeight / 2);
+      setTranslateX(tempX);
+      setTranslateY(tempY);
+      console.log(translateX, tempX);
+    });
+  }, []);
 
   return (
     <div id="part1">
       <div className="part1-container">
         <div className="head-content-container">
-          <div className="content-title">
+          <div
+            className="content-title"
+            style={{
+              transform: `translate(${translateX * 20},${translateY * 20})`
+            }}
+          >
             <img src={t1} alt="" />
           </div>
-          <div className="content-container">
+          <div
+            className="content-container"
+            style={{
+              transform: `translate(${translateX * 20},${translateY * 20})`
+            }}
+          >
             <p className="head-content">
               2017年春天，南邮小程序上显示出第一句"Hello, world"，
             </p>
@@ -43,7 +66,14 @@ export default function Header({ afterScrollTop, clientWidth, range }) {
             <p className="head-content">却从未忘却初心。</p>
             <p className="head-content last">两年，继续前进！</p>
           </div>
-          <div className="more">了解我们的更多 > </div>
+          <div
+            className="more"
+            style={{
+              transform: `translate(${translateX * 20},${translateY * 20})`
+            }}
+          >
+            我们的更多
+          </div>
         </div>
         <div
           className="top-bg"
