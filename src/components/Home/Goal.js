@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Goal.sass';
 import blue from '../../assets/blue.png';
 import pink from '../../assets/pink.png';
@@ -19,8 +19,25 @@ export default function Goal({ afterScrollTop, clientWidth, range }) {
   } else {
     distance = 0;
   }
+  const [translateX, setTranslateX] = useState(0);
+  const [translateY, setTranslateY] = useState(0);
+  const target = useRef(null);
+  useEffect(() => {
+    target.current.addEventListener('mousemove', e => {
+      const { x: pointX, y: pointY } = e;
+      const { innerHeight, innerWidth } = window;
+      const tempX = (pointX - innerWidth / 2) / (innerWidth / 2);
+      const tempY = (pointY - innerHeight / 2) / (innerHeight / 2);
+      setTranslateX(tempX);
+      setTranslateY(tempY);
+    });
+    target.current.addEventListener('mouseout', () => {
+      setTranslateX(0);
+      setTranslateY(0);
+    });
+  }, []);
   return (
-    <div id="part4">
+    <div ref={target} id="part4">
       <img
         className="mascot"
         style={{ transform: `translate(-35vw,-${distance}rem)` }}
@@ -80,24 +97,46 @@ export default function Goal({ afterScrollTop, clientWidth, range }) {
         </div>
       </div>
       <div className="goal-divide-line" />
-      <div className="goal-open-source">
+      <div
+        className="goal-open-source"
+        style={{
+          transform: `translate(${translateX * 20}px,${translateY * 20}px)`
+        }}
+      >
         <div className="goal-open-source-text-div">
-          <img className="goal-open-source-text-div-title" src={w4} alt="" />
-          <div className="goal-open-source-text-div-contents">
+          <img
+            className="goal-open-source-text-div-title"
+            style={{
+              transform: `translate(${translateX * 70}px,${translateY * 70}px)`
+            }}
+            src={w4}
+            alt=""
+          />
+          <div
+            className="goal-open-source-text-div-contents"
+            style={{
+              transform: `translate(${translateX * 50}px,${translateY * 50}px)`
+            }}
+          >
             <div className="goal-open-source-text-div-content1">
               开放和共享是一种学习。
             </div>
             <div
               className="goal-open-source-text-div-content2"
-              onClick={() => {
-                window.location.href = `https://github.com/GreenPomelo`;
-              }}
+              onClick={() => {}}
             >
               访问青柚的 GitHub 仓库 >
             </div>
           </div>
         </div>
-        <img className="goal-open-source-git" src={git} alt="" />
+        <img
+          style={{
+            transform: `translate(${translateX * 90}px,${translateY * 90}px)`
+          }}
+          className="goal-open-source-git"
+          src={git}
+          alt=""
+        />
       </div>
     </div>
   );
