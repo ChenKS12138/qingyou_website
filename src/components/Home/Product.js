@@ -13,7 +13,7 @@ export default function Product({ afterScrollTop, clientWidth, range }) {
   let rightDistance2 = 13;
   let rightDistance3 = -7;
   if (clientWidth <= 920) {
-    rightDistance2 = 3;
+    rightDistance2 = -3;
     rightDistance3 = -7;
   } else if (clientWidth > 920 && afterScrollTop > MIN) {
     const base = (afterScrollTop - MIN) / (MAX - MIN);
