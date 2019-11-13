@@ -15,7 +15,12 @@ export function RouteView(props) {
         setPath(pathFilter(window.location.hash.slice(1)));
       });
     } else {
-      window.history.replaceState(null, null, path);
+      try {
+        window.history.replaceState(null, null, path);
+      } catch (e) {
+        console.log(e);
+        console.error('window.history ERROR');
+      }
       window.addEventListener('pushState', () => {
         setPath(pathFilter(window.location.pathname));
       });
